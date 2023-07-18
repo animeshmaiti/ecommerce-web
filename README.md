@@ -1,5 +1,5 @@
 # ecommerce-web
-
+### This is a simple ecommerce website with php and mysql and this is not completed yet
 this website is running on xampp web server with mysql, php, html, bootstrap
 
 ## How to run this project
