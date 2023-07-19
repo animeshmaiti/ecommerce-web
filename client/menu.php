@@ -64,7 +64,7 @@ include_once "authguard.php";
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
+                        <a class="nav-link" href="vieworders.php">Orders</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,6 +74,7 @@ include_once "authguard.php";
                             <li><a class="dropdown-item" href="#"><?php echo "hello, $username" ?></a></li>
                             <li><a class="dropdown-item" href="#"><?php echo "userId, $userid" ?></a></li>
                             <li><a class="dropdown-item" href="#"><?php echo "userType, $user_type" ?></a></li>
+                            <li><a class="dropdown-item" href="address.php">Addresses</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
