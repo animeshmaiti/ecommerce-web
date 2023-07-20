@@ -10,7 +10,7 @@ if ($result) {
     $delete_query = "DELETE FROM `cart` WHERE `userid`=$userid";
     $deleted_result = mysqli_query($conn, $delete_query);
     if ($deleted_result) {
-        header("Location: vieworders.php");
+        header("Location: view_orders.php");
     } else {
         echo "Error: " . mysqli_error($conn);
     }

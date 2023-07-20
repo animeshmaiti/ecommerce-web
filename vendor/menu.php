@@ -25,7 +25,7 @@ include_once "authguard.php";
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="view.php">View Products</a>
+                        <a class="nav-link active" aria-current="page" href="view_product.php">View Products</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,7 +38,6 @@ include_once "authguard.php";
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <!-- <a class="dropdown-item" id="addNewItem">Add new item</a> -->
                                 <a class="dropdown-item" href="upload_form.php">Add new item</a>
                             </li>
                         </ul>
@@ -89,9 +88,6 @@ include_once "authguard.php";
                             </li>
                         </ul>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li> -->
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

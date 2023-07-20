@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $query);
             $num_rows = mysqli_num_rows($result);
             if ($num_rows == 0) {
                 echo "<div class='col-12 text-center'>
-                <h3> You have not set any addresses <a href='addressform.php'>Add address</a></h3>
+                <h3> You have not set any addresses <a href='address_form.php'>Add address</a></h3>
                 </div>";
             } else {
                 echo "
@@ -66,6 +66,9 @@ $result = mysqli_query($conn, $query);
             echo "Error: " . mysqli_error($conn);
         }
         ?>
+        <div class="d-flex justify-content-center" >
+            <a class='btn btn-primary' href="address_form.php" style="width: fit-content;">Add Address</a>
+        </div>
     </div>
 </body>
 

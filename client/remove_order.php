@@ -9,7 +9,7 @@ print_r($userid);
 $query="DELETE FROM `orders` WHERE `orderid`=$orderid AND `userid`=$userid";
 $result=mysqli_query($conn,$query);
 if($result){
-    header("Location: vieworders.php");
+    header("Location: view_orders.php");
 }else{
     echo "Error: " . mysqli_error($conn);
 }

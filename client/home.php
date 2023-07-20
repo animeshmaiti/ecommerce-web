@@ -49,7 +49,7 @@ $result = mysqli_query($conn, $query);
                             <h5 class='card-title'>$name</h5>
                             <p class='card-text'>Rs. $price</p>
                             <p class='card-text'>$details</p>
-                            <a href='addcart.php?pid=$pid' class='btn btn-warning'>Add To Cart</a>
+                            <a href='add_cart.php?pid=$pid' class='btn btn-warning'>Add To Cart</a>
                         </div>
                         </div>";
                 }

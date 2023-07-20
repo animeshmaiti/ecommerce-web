@@ -62,8 +62,8 @@ $result = mysqli_query($conn, $query);
                             <h5 class='card-title'>$name</h5>
                             <p class='card-text'>Rs. $price</p>
                             <p class='card-text'>$details</p>
-                            <a href='removecart.php?cartid=$cartid' class='btn btn-danger'>Remove</a>
-                            <a href='addwishlist.php?cartid=$cartid&pid=$pid' class='btn btn-warning'>Move to Wishlist</a>
+                            <a href='remove_cart.php?cartid=$cartid' class='btn btn-danger'>Remove</a>
+                            <a href='add_wishlist.php?cartid=$cartid&pid=$pid' class='btn btn-warning'>Move to Wishlist</a>
                         </div>
                         </div>";
                     }

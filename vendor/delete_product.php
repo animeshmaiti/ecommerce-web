@@ -7,7 +7,7 @@
     $query="DELETE FROM `product` WHERE `pid`=$pid";
     $result=mysqli_query($conn,$query);
     if($result){
-        header("Location: view.php");
+        header("Location: view_product.php");
     }else{
         echo "Error: ".mysqli_error($conn);
     }

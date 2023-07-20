@@ -25,12 +25,12 @@ include "address.php"
     <div id="addressFormContainer" style="display: block;">
         <h3>Add new address</h3>
         <form action="entry_address.php" method="post">
-        <input type="text" placeholder="Address Title" name="title" class="form-control mt-2">
-        <input type="text" placeholder="State" name="state" class="form-control mt-2">
-        <input type="text" placeholder="City" name="city" class="form-control mt-2">
-        <input type="text" placeholder="Landmark" name="landmark" class="form-control mt-2">
-        <input type="number" placeholder="Pin code/Area code" name="pin_code" class="form-control mt-2">
-        <input type="text" placeholder="Contact" name="contact" class="form-control mt-2">
+        <input type="text" required placeholder="Address Title" name="title" class="form-control mt-2">
+        <input type="text" required placeholder="State" name="state" class="form-control mt-2">
+        <input type="text" required placeholder="City" name="city" class="form-control mt-2">
+        <input type="text" required placeholder="Landmark" name="landmark" class="form-control mt-2">
+        <input type="number" required placeholder="Pin code/Area code" name="pin_code" class="form-control mt-2">
+        <input type="text" required placeholder="Contact" name="contact" class="form-control mt-2">
             <div class="text-center">
                 <button class="btn btn-warning mt-3">Add</button>
             </div>

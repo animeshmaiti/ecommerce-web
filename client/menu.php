@@ -51,7 +51,7 @@ include_once "authguard.php";
                             Cart
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="viewcart.php">Your cart</a></li>
+                            <li><a class="dropdown-item" href="view_cart.php">Your cart</a></li>
                             <li><a class="dropdown-item" href="wishlist.php">Your wishlist</a></li>
                             <li><a class="dropdown-item" href="#">Groceries</a></li>
                             <li><a class="dropdown-item" href="#">Medicine</a></li>
@@ -64,7 +64,7 @@ include_once "authguard.php";
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="vieworders.php">Orders</a>
+                        <a class="nav-link" href="view_orders.php">Orders</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

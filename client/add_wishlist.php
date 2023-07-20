@@ -10,7 +10,7 @@
     $query2 = "DELETE FROM `cart` WHERE `cartid`=$cartid";
     mysqli_query($conn, $query2);
     if ($result) {
-        header("Location: viewcart.php");
+        header("Location: view_cart.php");
     } else {
         echo "Error: " . mysqli_error($conn);
     }

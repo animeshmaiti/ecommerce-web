@@ -7,7 +7,7 @@
     $result = mysqli_query($conn, $query);
     
     if ($result) {
-        header("Location: viewcart.php");
+        header("Location: view_cart.php");
     } else {
         echo "Error: " . mysqli_error($conn);
     }

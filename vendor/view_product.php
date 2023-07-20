@@ -1,23 +1,24 @@
 <?php
-    include_once "authguard.php";
-    include "menu.php";
-    include_once "../shared/connection.php";
-    $userid = $_SESSION['userid'];
+include_once "authguard.php";
+include "menu.php";
+include_once "../shared/connection.php";
 
-    $query = "SELECT * FROM `product` JOIN `orders` ON product.pid=orders.pid WHERE userid=$userid";
-    $result = mysqli_query($conn, $query);
+$userid = $_SESSION['userid'];
+
+$query = "SELECT * FROM `product` WHERE `uploaded_by`=$userid";
+$result = mysqli_query($conn, $query);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Home Page</title>
+    <title>View Products</title>
     <style>
         .col {
             display: flex;
             flex-wrap: wrap;
         }
+
         .card {
             margin: 5px;
         }
@@ -25,18 +26,16 @@
 </head>
 
 <body>
-<div class="col">
+    <div class="col">
         <?php
         if ($result) {
             $num_rows = mysqli_num_rows($result);
             if ($num_rows == 0) {
-                echo "<div class='col-12 text-center'>
-                <h3> You have not placed any order <a href='viewcart.php'>Order item</a></h3>
-                </div>";
+                echo "<h1 class='text-center'>No Products Found</h1>";
             } else {
                 echo "
                 <div class='col-12 text-center'>
-                <h1>Orders</h1>
+                <h1>Products</h1>
                 </div>";
                 
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -44,7 +43,7 @@
                     $price = $row['price'];
                     $details = $row['details'];
                     $imgpath = $row['imgpath'];
-                    $orderid = $row['orderid'];
+                    $pid = $row['pid'];
                     echo " 
                     <div class='card' style='width: 18rem;'>
                         <img src='$imgpath' class='card-img-top' alt='...'>
@@ -52,7 +51,8 @@
                             <h5 class='card-title'>$name</h5>
                             <p class='card-text'>Rs. $price</p>
                             <p class='card-text'>$details</p>
-                            <a href='removeorder.php?orderid=$orderid' class='btn btn-danger'>Cancel Order</a>
+                            <a href='edit_form.php?pid=$pid' class='btn btn-primary'>Edit</a>
+                            <a href='delete_product.php?pid=$pid' class='btn btn-danger'>Delete</a>
                         </div>
                         </div>";
                 }
@@ -63,4 +63,17 @@
         ?>
     </div>
 </body>
+
+<body>
+
+    <script>
+        function confirmDelete(pid) {
+            res = confirm("Are you sure want to delete Product=" + pid);
+            if (res) {
+                window.location = `deletepdt.php?pid=${pid}`;
+            }
+        }
+    </script>
+</body>
+
 </html>
