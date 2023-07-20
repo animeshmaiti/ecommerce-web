@@ -35,7 +35,6 @@ this website is running on xampp web server with mysql, php, html, bootstrap
     password varchar(100) NOT NULL,
     user_type varchar(20) NOT NULL,
     time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP);
-    -- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
 7. create a new table with name `product` by run this sql query in console
@@ -59,7 +58,6 @@ this website is running on xampp web server with mysql, php, html, bootstrap
     uploaded_by int(11) NOT NULL,
     pid int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP);
-    -- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
 8. create a new table with name `cart` by run this sql query in console
@@ -98,4 +96,50 @@ this website is running on xampp web server with mysql, php, html, bootstrap
     -- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
-10. Open your browser and go to `http://localhost/ecommerce-web/`
+10. create a new table with name `order` by run this sql query in console
+
+| Field	 |   Type	|  Null | Key | Default	|	Extra|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|orderid	|int(11)	|NO	|PRI	|NULL|	auto_increment|
+|pid	    |int(11)	|NO	|	    |NULL|		
+|userid	    |int(11)	|NO	|	    |NULL|		
+|seller_id	|int(11)	|NO	|	    |NULL|		
+|time	    |timestamp	|NO	|	    |current_timestamp()|
+
+```sql 
+    CREATE TABLE `order` (
+    orderid int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pid int(11) NOT NULL,
+    userid int(11) NOT NULL,
+    seller_id int(11) NOT NULL,
+    time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP);
+```
+
+11. create a new table with name `addresses` by run this sql query in console
+
+| Field	 |   Type	|  Null | Key | Default	|	Extra|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|address_id	|int(11)	    |NO|	PRI	|NULL|	auto_increment|	
+|title	    |varchar(50)	|NO|		|NULL|		
+|userid	    |int(11)	    |NO|		|NULL|		
+|state	    |varchar(50)	|NO|		|NULL|		
+|city	    |varchar(50)	|NO|		|NULL|		
+|landmark	|varchar(50)	|NO|		|NULL|		
+|pin_code	|int(11)	    |NO|		|NULL|		
+|contact	|varchar(50)	|NO|		|NULL|		
+|time	    |timestamp	    |NO|		|current_timestamp()|
+
+```sql 
+    CREATE TABLE `addresses` (
+    address_id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title varchar(50) NOT NULL,
+    userid int(11) NOT NULL,
+    state varchar(50) NOT NULL,
+    city varchar(50) NOT NULL,
+    landmark varchar(50) NOT NULL,
+    pin_code int(11) NOT NULL,
+    contact varchar(50) NOT NULL,
+    time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP);
+```
+
+13. Open your browser and go to `http://localhost/ecommerce-web/`
