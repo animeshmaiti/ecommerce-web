@@ -3,7 +3,7 @@ include_once 'authguard.php';
 include_once '../shared/connection.php';
 $userid = $_SESSION['userid'];
 
-$query = "INSERT INTO `orders` (userid, pid) SELECT `userid`, `pid` FROM `cart` WHERE `userid`=$userid";
+$query = "INSERT INTO `orders` (userid, pid,seller_id) SELECT `userid`, `pid`, `seller_id` FROM `cart` WHERE `userid`=$userid";
 $result = mysqli_query($conn, $query);
 
 if ($result) {

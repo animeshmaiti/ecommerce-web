@@ -42,6 +42,7 @@ $result = mysqli_query($conn, $query);
                     $details = $row['details'];
                     $imgpath = $row['imgpath'];
                     $pid = $row['pid'];
+                    $seller_id = $row['uploaded_by'];
                     echo " 
                     <div class='card' style='width: 18rem;'>
                         <img src='$imgpath' class='card-img-top' alt='...'>
@@ -49,7 +50,7 @@ $result = mysqli_query($conn, $query);
                             <h5 class='card-title'>$name</h5>
                             <p class='card-text'>Rs. $price</p>
                             <p class='card-text'>$details</p>
-                            <a href='add_cart.php?pid=$pid' class='btn btn-warning'>Add To Cart</a>
+                            <a href='add_cart.php?pid=$pid&seller_id=$seller_id' class='btn btn-warning'>Add To Cart</a>
                         </div>
                         </div>";
                 }
