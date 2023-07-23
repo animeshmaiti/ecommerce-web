@@ -32,7 +32,7 @@ $imgpath = $row['imgpath'];
     <div id="uploadFormContainer" style="display: block;">
         <h3>Add new item</h3>
         <form action="edit_product.php?pid=<?php echo $pid?>" method="post" enctype="multipart/form-data">
-            <input type="text" placeholder="Product Name" name="name" class="form-control" value=<?php echo $name?>>
+            <input type="text" placeholder="Product Name" name="product_name" class="form-control" value=<?php echo $product_name?>>
             <input type="number" step="0.01" placeholder="Product Price" name="price" class="form-control mt-2" value=<?php echo $price?>>
             <textarea name="details" cols="30" rows="5" placeholder="Product description..." class="form-control mt-2" style="resize: none;"><?php echo $details?></textarea>
             <input type="file" name="img_path" class="form-control mt-2">

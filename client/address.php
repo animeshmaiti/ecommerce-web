@@ -58,6 +58,7 @@ $result = mysqli_query($conn, $query);
                         <p class='card-text'>$pin_code</p>
                         <p class='card-text'>$contact</p>
                         <a href='remove_address.php?address_id=$address_id' class='btn btn-danger'>Delete Address</a>
+                        <a href='#' class='btn btn-danger'>Edit Address</a>
                     </div>
                     </div>";
                 }
@@ -66,9 +67,9 @@ $result = mysqli_query($conn, $query);
             echo "Error: " . mysqli_error($conn);
         }
         ?>
-        <div class="d-flex justify-content-center" >
+        <!-- <div class="d-flex justify-content-center" >
             <a class='btn btn-primary' href="address_form.php" style="width: fit-content;">Add Address</a>
-        </div>
+        </div> -->
     </div>
 </body>
 
