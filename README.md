@@ -194,6 +194,8 @@ if($_FILES['img_path']['product_name']==""){
 - connect customer orders to vendor <br>
 when customer place order then it will store in orders table with seller_id and address_id so that vendor can see the orders with address and that order details is only visible to that vendor
 
+## [Screenshots](Screenshots/)
+
 
 
 
