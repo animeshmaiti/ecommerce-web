@@ -24,8 +24,6 @@ $result = mysqli_query($conn, $query);
             margin: 5px;
         }
     </style>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
 </head>
 
 <body>
@@ -48,7 +46,7 @@ $result = mysqli_query($conn, $query);
                 ";
                     $total = 0;
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $name = $row['name'];
+                        $name = $row['product_name'];
                         $price = $row['price'];
                         $details = $row['details'];
                         $imgpath = $row['imgpath'];

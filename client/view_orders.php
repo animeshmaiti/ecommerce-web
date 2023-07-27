@@ -40,7 +40,7 @@
                 </div>";
                 
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $name = $row['name'];
+                    $name = $row['product_name'];
                     $price = $row['price'];
                     $details = $row['details'];
                     $imgpath = $row['imgpath'];

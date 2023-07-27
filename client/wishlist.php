@@ -40,12 +40,13 @@
                 </div>";
                 
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $name = $row['name'];
+                    $name = $row['product_name'];
                     $price = $row['price'];
                     $details = $row['details'];
                     $imgpath = $row['imgpath'];
                     $cartid = $row['cartid'];
                     $pid = $row['pid'];
+                    $seller_id = $row['uploaded_by'];
                     echo " 
                     <div class='card' style='width: 18rem;'>
                         <img src='$imgpath' class='card-img-top' alt='...'>
@@ -54,7 +55,7 @@
                             <p class='card-text'>Rs. $price</p>
                             <p class='card-text'>$details</p>
                             <a href='remove_wishlist.php?cartid=$cartid' class='btn btn-danger'>Remove</a>
-                            <a href='add_cart.php?pid=$pid' class='btn btn-warning'>Add To Cart</a>
+                            <a href='add_cart.php?pid=$pid&seller_id=$seller_id' class='btn btn-warning'>Add To Cart</a>
                         </div>
                         </div>";
                 }

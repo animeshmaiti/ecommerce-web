@@ -1,11 +1,11 @@
 <?php
 include_once "authguard.php";
-include "view.php";
+include "view_product.php";
 $pid=$_GET['pid'];
 $query = "SELECT * FROM `product` WHERE `pid`=$pid";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
-$name = $row['name'];
+$product_name = $row['product_name'];
 $price = $row['price'];
 $details = $row['details'];
 $imgpath = $row['imgpath'];
@@ -30,7 +30,7 @@ $imgpath = $row['imgpath'];
 
 <body>
     <div id="uploadFormContainer" style="display: block;">
-        <h3>Add new item</h3>
+        <h3>Edit Item</h3>
         <form action="edit_product.php?pid=<?php echo $pid?>" method="post" enctype="multipart/form-data">
             <input type="text" placeholder="Product Name" name="product_name" class="form-control" value=<?php echo $product_name?>>
             <input type="number" step="0.01" placeholder="Product Price" name="price" class="form-control mt-2" value=<?php echo $price?>>

@@ -15,7 +15,6 @@
     if($_FILES['img_path']['product_name']==""){
         $query="UPDATE `product` SET `product_name`='$product_name',`price`=$price,`details`='$details',`uploaded_by`=$userid WHERE `pid`=$pid";
         $result=mysqli_query($conn,$query);
-    
     }else{
         $dest_img_path="../shared/img/".$_FILES['img_path']['product_name'];
         move_uploaded_file($_FILES['img_path']['tmp_name'],$dest_img_path);
