@@ -3,9 +3,9 @@ include_once "authguard.php";
 include_once "../shared/connection.php";
 include "menu.php";
 $userid = $_SESSION['userid'];
-$query = "SELECT * FROM `addresses` WHERE userid=$userid";
+$query = "SELECT * FROM `address` WHERE userid=$userid";
 $result = mysqli_query($conn, $query);
-
+$num_rows = mysqli_num_rows($result);
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +29,8 @@ $result = mysqli_query($conn, $query);
 <body>
     <div class="col">
         <?php
+        // print_r($result);
+        // exit();
         if ($result) {
             $num_rows = mysqli_num_rows($result);
             if ($num_rows == 0) {

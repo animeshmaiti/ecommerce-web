@@ -3,7 +3,7 @@ include_once "authguard.php";
 include_once "../shared/connection.php";
 include "menu.php";
 $userid = $_SESSION['userid'];
-$query = "SELECT * FROM `orders` JOIN `product` ON orders.pid=product.pid JOIN `addresses` ON orders.address_id=addresses.address_id WHERE `uploaded_by`=$userid";
+$query = "SELECT * FROM `orders` JOIN `product` ON orders.pid=product.pid JOIN `address` ON orders.address_id=address.address_id WHERE `uploaded_by`=$userid";
 $result = mysqli_query($conn, $query);
 
 ?>
