@@ -2,14 +2,26 @@
 // print_r($_POST);
 session_start();
 $_SESSION["login_status"] = false;
-$username = $_POST['username'];
-$password = $_POST['password'];
 
-$enc_pass = md5($password);
 include_once "connection.php";
 
-$sql = "SELECT * FROM user WHERE username='$username' AND password='$enc_pass'";
-$result = mysqli_query($conn, $sql);
+// $username = $_POST['username'];
+// $password = $_POST['password'];
+
+// $enc_pass = md5($password);
+
+// $sql = "SELECT * FROM user WHERE username='$username' AND password='$enc_pass'";
+// $result = mysqli_query($conn, $sql);
+
+// this prevents sql injection
+$username = mysqli_real_escape_string($conn, $_POST['username']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
+$enc_pass = md5($password);
+$stmt = $conn->prepare("SELECT * FROM user WHERE username = ? AND password = ?");
+$stmt->bind_param("ss", $username, $enc_pass);
+$stmt->execute();
+
+$result = $stmt->get_result();
 
 if (mysqli_num_rows($result) == 0) {
     header("Location: failed.html?username=" . urlencode($username));
